@@ -8,6 +8,7 @@ premake5 gmake2 # or gmake if you want
 cd build && make && cd ..
 ```
 Your build should be found in ```bin/Debug/Encrypter```, you can also use ```Release``` or ```Dist``` build configs.
+
 Usage:
 After building the program, you can use it with the following command line options:
 
