@@ -6,7 +6,7 @@
 
 class Encrypter{
     public:
-        Encrypter(bool _decrypt, const std::string &_filename, int _key = 0);
+        Encrypter(bool _decrypt, const std::string &_path, int _key = 0);
         ~Encrypter();
     private:
         int key;
@@ -15,6 +15,6 @@ class Encrypter{
         void encrypt();
         void decrypt();
 
-        std::string filename;
+        std::string path;
         bool toDecrypt;
 };

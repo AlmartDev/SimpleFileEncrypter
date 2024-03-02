@@ -23,15 +23,15 @@ int main(int argc, char* argv[]) {
         return 0;
     }
 
-    const std::string &filename = input.getCmdOption("-f");
-    if (!filename.empty()){
-        std::cout << "Filename: " << filename << std::endl;
+    const std::string &path = input.getCmdOption("-f");
+    if (!path.empty()){
+        std::cout << "Filename: " << path << std::endl;
     } else {
         std::cerr << "No filename specified" << std::endl;
         return 1;
     }
 
-    Encrypter encrypter(decrypt, filename, key);
+    Encrypter encrypter(decrypt, path, key);
 
     return 0;
 }

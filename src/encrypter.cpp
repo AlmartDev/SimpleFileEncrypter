@@ -1,7 +1,7 @@
 #include "encrypter.h"
 
 void Encrypter::encrypt() {
-    std::cout << "Encrypting " << this->filename << std::endl;
+    std::cout << "Encrypting " << this->path << std::endl;
 
     std::cout << "Select key or type 0 for a random key: ";
     std::cin >> key;
@@ -13,19 +13,22 @@ void Encrypter::encrypt() {
 
     std::fstream fin, fout;
 
-    fin.open(filename, std::fstream::in);
-    fout.open("encrypt.sfe", std::fstream::out);    // using .sfe extension for encrypted file (Simple File Encryptor)
+    fin.open(path, std::fstream::in);
+    fout.open(path + ".sfe", std::fstream::out); 
 
     while (fin >> std::noskipws >> c) {
+
+        if (c == '\n') {
+            fout << c;
+            continue;
+        }
+
         int temp = (c + key);
- 
-        // Write temp as char in
-        // output file
         fout << (char)temp;
     }
 
     // Delete the original file
-    remove(filename.c_str());
+    remove(path.c_str());
  
     // Closing both files
     fin.close();
@@ -33,36 +36,53 @@ void Encrypter::encrypt() {
 }
 
 void Encrypter::decrypt() {
-    std::cout << "Decrypting " << this->filename << std::endl;
+    std::cout << "Decrypting " << this->path << std::endl;
 
     if (key == 0) {
         std::cout << "Enter key: ";
         std::cin >> key;
     }
 
+    // TODO: key validation?
+
     std::fstream fin;
     std::fstream fout;
 
-    fin.open(filename, std::fstream::in);
-    fout.open("decrypt.txt", std::fstream::out);
+    std::string name = path.substr(0, path.find_last_of("."));
+    std::string extension = path.substr(path.find_last_of("."));
+
+    fin.open(path, std::fstream::in);
+    fout.open(path.substr(0, path.find_last_of(".")), std::fstream::out);
  
-    while (fin >> std::noskipws >> c) {
- 
-        // Remove the key from the
-        // character
+    while (fin >> std::noskipws >> c) { 
+        if (c == '\n') {
+            fout << c;
+            continue;
+        }
+
         int temp = (c - key);
         fout << (char)temp;
     }
 
+    // debug
+    std::cout << "\nName: " << name << std::endl;
+    std::cout << "Extension: " << extension << "\n" << std::endl;
+
+    // if (!extension.empty() && !name.empty()) {
+    //     std::string originalName = name + "." + extension;
+    //     fout.close();
+    //     rename("decrypted", originalName.c_str());
+    // }
+
     // Delete the original file
-    remove(filename.c_str());
+    remove(path.c_str());
  
     fin.close();
     fout.close();
 }
 
-Encrypter::Encrypter(bool _decrypt, const std::string &_filename, int _key) {
-    this->filename = _filename;
+Encrypter::Encrypter(bool _decrypt, const std::string &_path, int _key) {
+    this->path = _path;
     this->key = _key;
     this->toDecrypt = _decrypt;
 

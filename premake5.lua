@@ -1,4 +1,4 @@
-workspace "Encrypter"
+workspace "Encrypter" 
     configurations { "Debug", "Release" }
     location "build"
     filter "configurations:Debug"
@@ -12,7 +12,7 @@ workspace "Encrypter"
         optimize "On"
     filter {}
 
-project "Encrypter"
+project "sfe"
     files { "src/**.h", "src/**.cpp" }
     kind "ConsoleApp" -- for now
     language "C++"
