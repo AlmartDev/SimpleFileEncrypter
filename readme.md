@@ -18,5 +18,11 @@ After building the program, you can use it with the following command line optio
 For more detailed instructions, refer to the help section by using -h or --help.
 # TODO
 Enhancements planned for future updates include:
-- Preserving the file name and extension after decrypting.
 - Adding the capability to encrypt entire directories.
+
+# Encrypted file
+There is a encrypted file, can you try to unencrypt it without the key?
+<details>
+  <summary>File key</summary>
+  Yes, the key is 1234!
+</details>
