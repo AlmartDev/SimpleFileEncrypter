@@ -21,7 +21,7 @@ Enhancements planned for future updates include:
 - Adding the capability to encrypt entire directories.
 
 # Encrypted file
-There is a encrypted file, can you try to unencrypt it without the key?
+There is a encrypted file, can you unencrypt it without the key?
 <details>
   <summary>File key</summary>
   Yes, the key is 1234!
