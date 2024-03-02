@@ -1,19 +1,21 @@
 # Basic File Encrypter
-This is just a simple program that lets you encrypt and decrypt your files asigning them a key to later descrypt. Made with support for as many platforms as possible and a simple compilation process; there is no 3rd parties stuff (other than premake5), only standard C++ functions.
-
-# How to build/use
+The Basic File Encrypter is a straightforward program designed to encrypt and decrypt files by assigning them a key for later decryption. It is developed with support for multiple platforms and boasts a simple compilation process, utilizing only standard C++ functions without any third-party dependencies other than premake5.
+# How to Build and Use
 Linux:
 ```sh
-git clone https://github.com/almartdev/sfe.git && cd sfe
-premake5 gmake2
+```
+
+sh
 cd build && make && cd ..
-```
 
-Usage (see using -h or --help)
-```sh
--f <filename> : file to encrypt/decrypt
--d <key> : decrypt, key is optional
-```
+Usage:
+After building the program, you can use it with the following command line options:
 
+    -f <filename>: Specify the file to encrypt or decrypt.
+    -d <key>: Decrypt the file, where the key is optional.
+
+For more detailed instructions, refer to the help section by using -h or --help.
 # TODO
-- keep file name and extension after decrypting
+Enhancements planned for future updates include:
+- Preserving the file name and extension after decrypting.
+- Adding the capability to encrypt entire directories.
