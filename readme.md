@@ -3,11 +3,11 @@ The Basic File Encrypter is a straightforward program designed to encrypt and de
 # How to Build and Use
 Linux:
 ```sh
-```
-
-sh
+git clone https://github.com/AlmartDev/sfe.git && cd sfe
+premake5 gmake2 # or gmake if you want
 cd build && make && cd ..
-
+```
+Your build should be found in ```bin/Debug/Encrypter```, you can also use ```Release``` or ```Dist``` build configs.
 Usage:
 After building the program, you can use it with the following command line options:
 
