@@ -14,7 +14,14 @@ workspace "Encrypter"
 
 project "sfe"
     files { "src/**.h", "src/**.cpp" }
-    kind "ConsoleApp" -- for now
+    kind "ConsoleApp"
     language "C++"
     targetdir "bin/%{cfg.buildcfg}"
     includedirs { "src" }
+    
+project "bruteForceDecrypter"
+    files { "bruteForceDecrypter/**.h", "bruteForceDecrypter/**.cpp" }
+    kind "ConsoleApp"
+    language "C++"
+    targetdir "bin/%{cfg.buildcfg}/bruteForceDecrypter"
+    includedirs { "bruteForceDecrypter" }
