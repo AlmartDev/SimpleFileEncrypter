@@ -1,5 +1,5 @@
-# Basic File Encrypter
-The Basic File Encrypter is a straightforward program designed to encrypt and decrypt files by assigning them a key for later decryption. It is developed with support for multiple platforms and boasts a simple compilation process, utilizing only standard C++ functions without any third-party dependencies other than premake5.
+# Simple File Encrypter
+The Simple File Encrypter is a straightforward program designed to encrypt and decrypt files by assigning them a key for later decryption. It is developed with support for multiple platforms and boasts a simple compilation process, utilizing only standard C++ functions without any third-party dependencies other than premake5.
 # How to Build and Use
 Linux:
 ```sh
